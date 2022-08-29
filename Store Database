@@ -1,0 +1,32 @@
+
+CREATE TABLE store (id integer primary key, item text, section text, popularity integer, price integer);
+
+INSERT INTO store VALUES (1, 'strawberries', 'Produce', 60, 3.99);
+INSERT INTO store VALUES (2, 'Flour Tortillas', 'Bakery', 70, 2.99);
+INSERT INTO store VALUES (3, 'Bananas', 'produce', 50, 0.88);
+INSERT INTO store VALUES (5, 'tomatoes', 'produce', 40, 0.88);
+INSERT INTO store VALUES (6, 'corn chips', 'snacks', 55, 2.99);
+INSERT INTO store VALUES (7, 'mushrooms', 'produce', 25, 1.99);
+INSERT INTO store VALUES (8, 'donuts', 'bakery', 65, 2.99);
+INSERT INTO store VALUES (9, 'deodorant', 'fresh', 40, 2.69);
+INSERT INTO store VALUES (10, 'ground beef', 'meat', 70, 7.99);
+INSERT INTO store VALUES (11, 'chicken breast', 'meat', 50, 7.99);
+INSERT INTO store VALUES (12, 'potatoes', 'produce', 30, 2.99);
+INSERT INTO store VALUES (13, 'broccoli', 'frozen', 45, 2.99);
+INSERT INTO store VALUES (14, 'ham', 'deli', 47, 3.99);
+INSERT INTO store VALUES (15, 'multivitamin', 'health', 30, 4.99);
+
+Display database srore pice.
+SELECT * FROM store ORDER by price asc;
+
+What are the top 3 popular items? 
+SELECT item, price, popularity
+FROM store
+order by popularity desc
+limit 5;
+
+what is the average price of items in the 'produce' section?
+SELECT item, section, avg(price) from store 
+where section = 'produce';
+
+ 
