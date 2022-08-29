@@ -26,7 +26,8 @@ order by popularity desc
 limit 5;
 
 what is the average price of items in the 'produce' section?
-SELECT item, section, avg(price) from store 
-where section = 'produce';
 
+SELECT AVG(price) "avg product item price"
+FROM store
+where section='produce
  
