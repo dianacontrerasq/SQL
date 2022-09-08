@@ -1,0 +1,56 @@
+CREATE TABLE artists (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER);
+
+INSERT INTO artists (fullname, age) VALUES
+("LeonardoDecaprio", "47");
+INSERT INTO artists (fullname, age) VALUES
+("JenniferGardener", "50");
+INSERT INTO artists (fullname, age) VALUES
+("KristenWiing", "49");
+
+
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    name TEXT,
+    artist_age INTEGER,
+    release_year INTEGER);
+
+
+INSERT INTO movies (id, title, name, artist_age, release_year) VALUES
+(1, "Titanic", "Leonardo", "21", "1997");
+INSERT INTO movies (id, title, name, artist_age, release_year) VALUES
+(2, "13goingon30", "Jennifer", "32", "2004");
+INSERT INTO movies (id, title, name, artist_age, release_year) VALUES
+(3, "bridesmaides", "Kristen", "38", 2011);
+
+Who are the artist?
+
+SELECT * FROM artists;
+ 
+WHat are the movies?
+
+SELECT * FROM movies;
+
+What is the artist name and what movie did they star in?
+
+SELECT a.fullname, m.title 
+
+FROM artists a
+
+LEFT JOIN movies m
+
+on a.id=m.id;
+
+
+How old are thety now vs how old they where when they stared in the movie?
+
+SELECT a.fullname AS Artist, title AS Movie, a.age AS age_they_are_now , m.artist_age Age_they_starred_Movie 
+
+FROM artists a 
+
+JOIN movies m
+
+ON  a.id=m.id;
